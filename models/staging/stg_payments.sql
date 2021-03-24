@@ -10,6 +10,6 @@ select
           , paymentmethod as payment_method
           , status as payment_status          --can be 'fail or success'
           , amount/100 as payment_amount      --in pounds/dollars
-          , created as created_dt
+          , created as created_date
 
 from        raw.stripe.payment
