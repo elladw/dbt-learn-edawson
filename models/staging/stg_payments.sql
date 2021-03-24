@@ -12,4 +12,4 @@ select
           , amount/100 as payment_amount      --in pounds/dollars
           , created as created_date
 
-from        raw.stripe.payment
+from        {{ source('stripe','payment') }}

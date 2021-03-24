@@ -39,3 +39,19 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+
+  - name: orders
+    description: This model pulls together all data relating to an order (from orders and payments)
+    columns:
+      - name: order_id
+        description: Primary key - one id per order
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_payments')
+              field: order_id
+      - name: customer_id
+        description: Unique by customer
+        tests:
+          - not_null
